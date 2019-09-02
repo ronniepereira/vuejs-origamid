@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./vue.js"></script>
+    <title>Vue.js Exe 03</title>
+</head>
+<body>
+     <div id="app">
+        Total: {{total}}
+        <button @click="incrementar">Incrementar</button>
+        <button @click="diminuir">Diminuir</button>
+     </div>
+     <script>
+        const vm = new Vue({
+            el:"#app",
+            data: {
+                total: 0
+            },
+            methods: {
+                incrementar() {
+                    this.total++
+                },
+                diminuir() {
+                    this.total--
+                }
+            }
+        });
+    </script>
+</body>
+</html>

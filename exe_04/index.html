@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./vue.js"></script>
+    <title>Vue.js Exe 04</title>
+</head>
+<body>
+    <div id="app">
+        <p>Nome: {{acoes.name}}</p>
+        <p>Localização: {{acoes.location}}</p>
+        <p>Repositórios publicos: {{acoes.public_repos}}</p>
+        <p>Seguidores: {{acoes.followers}}</p>
+        <button @click="puxarAcoes">Puxar Ações</button>
+    </div>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                acoes: {}
+            },
+            methods: {
+                puxarAcoes: function(){
+                    fetch('https://api.github.com/users/rpereira')
+                    .then(response => response.json())
+                    .then(json => {
+                        this.acoes = json
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+</html>
