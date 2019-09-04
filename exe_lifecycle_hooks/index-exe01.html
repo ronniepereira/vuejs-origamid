@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./vue.js"></script>
+    <title>VueJS - Exe Lifecycle</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="value, key in github">
+                {{key}} : {{value}}
+            </li>
+        </ul>
+        <button @click="contador++">Adicionar {{contador}}</button>
+    </div>
+    <script>
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                github: {},
+                contador: 0
+            },
+            methods: {
+                puxarGit() {
+                    fetch('https://api.github.com/users/origamid')
+                    .then(response => response.json())
+                    .then(response => {
+                        this.github = response;
+                    })
+                }
+            },
+            updated() {
+                document.title = this.contador;
+            },
+            created() {
+                this.puxarGit();
+            }
+        });
+    </script>
+    <style>
+        
+    </style>
+</body>
+</html>

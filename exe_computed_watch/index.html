@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./vue.js"></script>
+    <title>VueJS - Exe Computed</title>
+</head>
+<body>
+    <div id="app">
+        <button @click="puxarPaises">Puxar</button>
+        <select name="paises" id="paises" v-model="paisSelecionado">
+            <option v-for="pais in paises" :value="pais.name">
+                {{pais.name}}
+            </option>
+        </select>
+        <p>{{paisSelecionado}} - {{capital}}</p>
+    </div>
+
+    <script>
+    const vm = new Vue({
+        el:'#app',
+        data: {
+            paises: {},
+            paisSelecionado: "",
+            capital:""
+        },
+        methods: {
+            puxarPaises() {
+                fetch("http://restcountries.eu/rest/v2/all")
+                .then(response => response.json())
+                .then(response => {
+                    this.paises = response;
+                })
+            }   
+        },
+        watch: {
+            paisSelecionado(valor){
+                var pais = this.paises.find((pais)=> pais.name === valor);
+                this.capital = pais.capital;
+            }
+        }
+    });
+    </script>
+</body>
+</html>
