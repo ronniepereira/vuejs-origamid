@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./vue.js"></script>
+    <title>VueJS Props</title>
+</head>
+<body>
+    <div id="app">
+        <formulario-acoes></formulario-acoes>
+    </div>
+
+    <script type="module">
+    
+    const DadosAcao = {
+        name: "DadosAcao",
+        props: ["acao"],
+        template: `
+        <div>
+            <h2>{{acao.symbol}}</h2>
+            <h4>{{acao.companyName}}</h4>
+            <h4>Valor atual: {{acao.latestPrice}}</h4>
+        </div>
+        `
+    }
+
+    const FormularioAcoes = {
+        name: "FormularioAcoes",
+        components: {
+            DadosAcao
+        },
+        data(){
+            return {
+                simbolo: "",
+                quote: {}
+            }
+        },
+        template: `
+        <div>
+            <input type="text" v-model="simbolo"/>
+            <button @click=puxarAcoes(simbolo)>Puxar Ações</button>
+            <dados-acao :acao="quote"></dados-acao>
+        </div>
+        `,
+        methods: {
+            puxarAcoes(symbol) {
+                fetch(`https://cloud.iexapis.com/stable/stock/${this.simbolo}/quote?token=pk_2031aacfc58641978df0ea4b020a99d7`)
+                    .then(response => response.json())
+                    .then(response => {
+                        this.quote = response
+                    })
+            }
+        }
+    }
+
+    const vm = new Vue({
+        el:"#app",
+        components: {
+            FormularioAcoes
+        }
+    });
+
+    </script>
+
+</body>
+</html>
