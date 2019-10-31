@@ -4,8 +4,8 @@
       <PageLoading />
     </div>
     <div v-if="api">
-      <h1>Home</h1>
-      <p>{{api}}</p>
+      <h1>Cursos</h1>
+      {{api}}
     </div>
   </div>
 </template>
@@ -14,10 +14,10 @@
 import fetchData from "@/mixins/fetchData.js";
 
 export default {
-  name: "home",
+  name: "cursos",
   mixins: [fetchData],
   created() {
-    this.fetchData("/home");
+    this.fetchData("/cursos");
   }
 };
 </script>
