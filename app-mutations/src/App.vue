@@ -1,26 +1,26 @@
 <template>
   <div id="app">
-    <Curso/>
+    <Aluno />
+    <Curso />
   </div>
 </template>
 
 <script>
-import Aluno from './components/Aluno.vue'
-import Aulas from './components/Aulas.vue'
-import Curso from './components/Curso.vue'
+import Curso from "./components/Curso.vue";
+import Aluno from "./components/Aluno.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    Curso
+    Curso,
+    Aluno
   }
-}
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  text-align: center;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   color: #2c3e50;
   margin-top: 60px;
 }
