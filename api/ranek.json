@@ -1,0 +1,44 @@
+{
+  "usuario": [
+    {
+      "id": "vinniciusrp@gmail.com",
+      "email": "vinniciusrp@gmail.com",
+      "nome": "Ronnie Pereira",
+      "senha": "123",
+      "rua": "Rua Ali Perto",
+      "cep": "secret",
+      "numero": "25",
+      "estado": "SP",
+      "cidade": "Ribeirao Preto"
+    }
+  ],
+  "produto": [
+    {
+      "id": "notebook",
+      "nome": "Notebook",
+      "usuario_id": "vinniciusrp@gmail.com",
+      "preco": "4999",
+      "vendido": "false",
+      "descricao": "Esse é um novo notebook.",
+      "fotos": null
+    },
+    {
+      "id": "smartphone",
+      "nome": "Smartphone",
+      "usuario_id": "vinniciusrp@gmail.com",
+      "preco": "1999",
+      "vendido": "false",
+      "descricao": "Esse é um novo smartphone.",
+      "fotos": null
+    },
+    {
+      "id": "tablet",
+      "nome": "Tablet",
+      "usuario_id": "vinniciusrp@gmail.com",
+      "preco": "1399",
+      "vendido": "false",
+      "descricao": "Esse é um novo tablet.",
+      "fotos": null
+    }
+  ]
+}
