@@ -1,19 +1,22 @@
 <template>
   <section class="produtos-container">
-    <div v-if="produtos && produtos.length" class="produtos">
-      <div class="produto" v-for="produto in produtos" :key="produto.id">
-        <router-link to="/">
-          <img v-if="produto.fotos" :src="produto.fotos[0].src" :alt="produto.fotos[0].titulo" />
-          <p class="preco">{{produto.preco}}</p>
-          <h2 class="titulo">{{produto.nome}}</h2>
-          <p>{{produto.descricao}}</p>
-        </router-link>
+    <transition mode="out-in">
+      <div v-if="produtos && produtos.length" class="produtos" key="produtos">
+        <div class="produto" v-for="produto in produtos" :key="produto.id">
+          <router-link :to="{name: 'produto', params: {id: produto.id}}">
+            <img v-if="produto.fotos" :src="produto.fotos[0].src" :alt="produto.fotos[0].titulo" />
+            <p class="preco">{{produto.preco | numeroPreco}}</p>
+            <h2 class="titulo">{{produto.nome}}</h2>
+            <p>{{produto.descricao}}</p>
+          </router-link>
+        </div>
+        <ProdutosPaginar :produtosTotal="produtosTotal" :produtosPorPagina="produtosPorPagina" />
       </div>
-      <ProdutosPaginar :produtosTotal="produtosTotal" :produtosPorPagina="produtosPorPagina" />
-    </div>
-    <div class="sem-resultados" v-else-if="produtos && produtos.length === 0">
-      <p>Busca sem resultados. Tente buscar outro termo.</p>
-    </div>
+      <div class="sem-resultados" v-else-if="produtos && produtos.length === 0" key="sem-produtos">
+        <p>Busca sem resultados. Tente buscar outro termo.</p>
+      </div>
+      <ProdutosCarregando v-else key="carregando" />
+    </transition>
   </section>
 </template>
 
@@ -30,7 +33,7 @@ export default {
   data() {
     return {
       produtos: null,
-      produtosPorPagina: 3,
+      produtosPorPagina: 9,
       produtosTotal: 0
     };
   },
@@ -104,5 +107,19 @@ export default {
 
 .sem-resultados {
   text-align: center;
+}
+
+.v-enter,
+.v-leave-to {
+  opacity: 0;
+}
+
+.v-enter {
+  transform: translate3d(0, -20px);
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: all 0.3s;
 }
 </style>
