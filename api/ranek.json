@@ -10,6 +10,18 @@
       "numero": "25",
       "estado": "SP",
       "cidade": "Ribeirao Preto"
+    },
+    {
+      "id": "2rShSs-",
+      "nome": "Ronnie Vinnicius Moser Pereira",
+      "email": "viinnicius@gmail.com",
+      "senha": "123",
+      "cep": "14060844",
+      "rua": "Rua Haraldo Fernandes",
+      "numero": "123",
+      "bairro": "Jardim Herculano Fernandes",
+      "cidade": "Ribeirão Preto",
+      "estado": "SP"
     }
   ],
   "produto": [
