@@ -25,16 +25,9 @@ export default {
   },
   methods: {
     async criarUsuario() {
-      try {
-        await this.$store.dispatch("criarUsuario", this.$store.state.usuario);
-        await this.$store.dispatch(
-          "getUsuario",
-          this.$store.state.usuario.email
-        );
-        this.$router.push({ name: "usuario" });
-      } catch (error) {
-        console.error("TESTE");
-      }
+      await this.$store.dispatch("criarUsuario", this.$store.state.usuario);
+      await this.$store.dispatch("getUsuario", this.$store.state.usuario.email);
+      this.$router.push({ name: "usuario" });
     }
   }
 };
@@ -57,9 +50,5 @@ h2 {
 
 .btn-form {
   max-width: 100%;
-}
-
-function newFunction(error) {
-  console.log(error);
 }
 </style>

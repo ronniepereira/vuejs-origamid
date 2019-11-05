@@ -73,6 +73,7 @@ label {
   transition: all 0.3s;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   cursor: pointer;
+  border: none;
 }
 
 .btn:hover {

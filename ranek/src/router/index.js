@@ -2,7 +2,11 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "@/views/Home.vue";
 import Login from "@/views/Login.vue";
-import Usuario from "@/views/Usuario.vue";
+import Usuario from "@/views/usuario/Usuario.vue";
+import UsuarioProdutos from "@/views/usuario/UsuarioProdutos.vue";
+import UsuarioCompras from "@/views/usuario/UsuarioCompras.vue";
+import UsuarioEditar from "@/views/usuario/UsuarioEditar.vue";
+import UsuarioVendas from "@/views/usuario/UsuarioVendas.vue";
 import ProdutosCarregando from "@/components/ProdutosCarregando";
 import Produto from "@/components/Produto.vue";
 
@@ -28,8 +32,29 @@ const routes = [
   },
   {
     path: "/usuario",
-    name: "usuario",
-    component: Usuario
+    component: Usuario,
+    children: [
+      {
+        path: "",
+        name: "usuario",
+        component: UsuarioProdutos
+      },
+      {
+        path: "compras",
+        name: "compras",
+        component: UsuarioCompras
+      },
+      {
+        path: "vendas",
+        name: "vendas",
+        component: UsuarioVendas
+      },
+      {
+        path: "editar",
+        name: "usuario-editar",
+        component: UsuarioEditar
+      }
+    ]
   }
 ];
 

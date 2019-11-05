@@ -11,7 +11,7 @@ export default {};
 <style>
 footer {
   background: #87f;
-  padding: 25px 0;
+  padding: 20px 0;
   text-align: center;
   font-size: 1rem;
   color: #fff;
