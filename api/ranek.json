@@ -1,4 +1,28 @@
 {
+  "transacao": [
+    {
+      "comprador_id": "pereira@gmail.com",
+      "vendedor_id": "vinniciusrp@gmail.com",
+      "produto": {
+        "id": "tablet",
+        "nome": "Tablet",
+        "usuario_id": "vinniciusrp@gmail.com",
+        "preco": "1399",
+        "vendido": "false",
+        "descricao": "Esse é um novo tablet.",
+        "fotos": null
+      },
+      "endereco": {
+        "cep": "14060090",
+        "rua": "Rua São Francisco",
+        "numero": "190",
+        "bairro": "Ipiranga",
+        "cidade": "Ribeirão Preto",
+        "estado": "SP"
+      },
+      "id": 1
+    }
+  ],
   "usuario": [
     {
       "id": "vinniciusrp@gmail.com",
@@ -23,18 +47,21 @@
       "bairro": "Jardim Herculano Fernandes",
       "cidade": "Ribeirão Preto",
       "estado": "SP"
+    },
+    {
+      "id": "pereira@gmail.com",
+      "nome": "Pereira",
+      "email": "pereira@gmail.com",
+      "senha": "123",
+      "cep": "14060090",
+      "rua": "Rua São Francisco",
+      "numero": "190",
+      "bairro": "Ipiranga",
+      "cidade": "Ribeirão Preto",
+      "estado": "SP"
     }
   ],
   "produto": [
-    {
-      "id": "tablet",
-      "nome": "Tablet",
-      "usuario_id": "vinniciusrp@gmail.com",
-      "preco": "1399",
-      "vendido": "false",
-      "descricao": "Esse é um novo tablet.",
-      "fotos": null
-    },
     {
       "id": "notebook",
       "nome": "Notebook",

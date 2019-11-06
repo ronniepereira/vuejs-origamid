@@ -1,5 +1,5 @@
 <template>
-  <form action>
+  <form>
     <div class="usuario" v-if="mostrarDadosLogin">
       <label for="nome">Nome</label>
       <input id="nome" name="nome" type="text" v-model="nome" />
