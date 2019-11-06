@@ -2,14 +2,15 @@
   "usuario": [
     {
       "id": "vinniciusrp@gmail.com",
-      "email": "vinniciusrp@gmail.com",
       "nome": "Ronnie Pereira",
+      "email": "vinniciusrp@gmail.com",
       "senha": "123",
-      "rua": "Rua Ali Perto",
       "cep": "secret",
+      "rua": "Rua Ali Perto",
       "numero": "25",
-      "estado": "SP",
-      "cidade": "Ribeirao Preto"
+      "bairro": "Ali perto",
+      "cidade": "Ribeirao Preto",
+      "estado": "SP"
     },
     {
       "id": "2rShSs-",
@@ -25,24 +26,6 @@
     }
   ],
   "produto": [
-    {
-      "id": "notebook",
-      "nome": "Notebook",
-      "usuario_id": "vinniciusrp@gmail.com",
-      "preco": "4999",
-      "vendido": "false",
-      "descricao": "Esse é um novo notebook.",
-      "fotos": null
-    },
-    {
-      "id": "smartphone",
-      "nome": "Smartphone",
-      "usuario_id": "vinniciusrp@gmail.com",
-      "preco": "1999",
-      "vendido": "false",
-      "descricao": "Esse é um novo smartphone.",
-      "fotos": null
-    },
     {
       "id": "tablet",
       "nome": "Tablet",
@@ -491,6 +474,30 @@
       "descricao": "aasd",
       "fotos": null,
       "id": "gwRKorP"
+    },
+    {
+      "nome": "tablet dell",
+      "preco": "123",
+      "descricao": "asdasd",
+      "fotos": null,
+      "usuario_id": "vinniciusrp@gmail.com",
+      "id": "SFgmYDN"
+    },
+    {
+      "nome": "tablet dell",
+      "preco": "123",
+      "descricao": "asdasd",
+      "fotos": null,
+      "usuario_id": "vinniciusrp@gmail.com",
+      "id": "fveQaj-"
+    },
+    {
+      "nome": "tablet dell",
+      "preco": "123",
+      "descricao": "asdasdasdasdasdasdasdasd",
+      "fotos": null,
+      "usuario_id": "vinniciusrp@gmail.com",
+      "id": "eqUFV3-"
     }
   ]
 }

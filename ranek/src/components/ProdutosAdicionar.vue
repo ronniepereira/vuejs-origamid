@@ -32,9 +32,9 @@ export default {
       this.produto.usuario_id = this.$store.state.usuario.id;
     },
     adicionarProduto() {
-      this.formatarProduto;
+      this.formatarProduto();
       api.post("/produto", this.produto).then(() => {
-        this.$store.dispatch("getUsuarioProduto");
+        this.$store.dispatch("getUsuarioProdutos");
       });
     }
   }

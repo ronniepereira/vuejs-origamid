@@ -101,4 +101,13 @@ textarea {
   font-size: 1rem;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
 }
+
+input:hover,
+input:focus,
+textarea:hover,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 6px 12px rgba(30, 60, 90, 0.2);
+  border-color: #87f;
+}
 </style>
